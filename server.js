@@ -23,7 +23,7 @@ http.createServer(function(req, res) {
     res.write(JSON.stringify({ status: 'OK', success: true, message: 'About' }));
     pino.info('About');
     res.end();
-  } else {
+  } else if (url === '/') {
     res.write(JSON.stringify({ status: 'OK', success: true, message: 'Hello Universe' }));
     pino.info('Hello Universe');
     res.end();
