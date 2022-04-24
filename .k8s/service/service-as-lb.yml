@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8-lab-deployment
+  labels:
+    app: k8-lab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8-lab
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: k8-lab
+    spec:
+      containers:
+      - name: k8-lab-image
+        image: k8-lab-image
+        imagePullPolicy: IfNotPresent
+        command: ["npm", "run", "start-docker"]
+        ports:
+        - containerPort: 3333
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8-lab-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8089
+    targetPort: 3333
+  selector:
+    app: k8-lab
