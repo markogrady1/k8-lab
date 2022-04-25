@@ -7,7 +7,7 @@ build Dockerfile
 docker build . -t k8-lab-image
 ```
 
-### demo using Service ClusterIP
+# demo using Service ClusterIP
 
 ```
 kubectl apply -f .k8s/service/service-as-clusterip.yml
@@ -49,7 +49,8 @@ test connection via the service name and hit healthcheck
 k exec $K8_POD_NAME -- curl -s $K8_SERVICE_NAME:$K8_PORT -- curl -s  $K8_SERVICE_NAME:$K8_PORT/healthcheck
 ```
 
-### demo using service NodePort
+
+# demo using service NodePort
 
 edit the existing `service-demo.ymal` file, changing the type to `NodePort`
 
@@ -71,7 +72,8 @@ k get nodes -o wide
 
 go to youur browser and hit `<INTERNAL-IP>:<nodePort>`
 
-### demo using service LoadBalancer
+
+# demo using service LoadBalancer
 
 again edit the existing `service-demo.ymal` file, changing the type to `LoadBalancer`
 
