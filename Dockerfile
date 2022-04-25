@@ -6,7 +6,7 @@ RUN npm install --only=production
 COPY . .
 
 FROM node:alpine
-RUN apk add vim
+RUN apk add vim curl
 WORKDIR /usr/src/app
 COPY --from=build /usr/src/app /usr/src/app
 EXPOSE 3333
