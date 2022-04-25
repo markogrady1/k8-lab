@@ -50,7 +50,8 @@ k exec $K8_POD_NAME -- curl -s $K8_SERVICE_NAME:$K8_PORT -- curl -s  $K8_SERVICE
 ```
 
 
-# demo using service NodePort
+<h1> demo using service NodePort </h1>
+
 
 edit the existing `service-demo.ymal` file, changing the type to `NodePort`
 
@@ -73,7 +74,8 @@ k get nodes -o wide
 go to youur browser and hit `<INTERNAL-IP>:<nodePort>`
 
 
-# demo using service LoadBalancer
+<h1> demo using service LoadBalancer </h1>
+
 
 again edit the existing `service-demo.ymal` file, changing the type to `LoadBalancer`
 
