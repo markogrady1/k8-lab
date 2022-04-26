@@ -9,7 +9,7 @@ docker build . -t k8-lab-image
 
 # Demos
 
-<h3>demo using service ClusterIP </h3>
+<h2>demo using service ClusterIP </h2>
 
 ```
 kubectl apply -f .k8s/service-api/service-demo.yml
@@ -52,7 +52,7 @@ k exec $K8_POD_NAME -- curl -s $K8_SERVICE_NAME:$K8_PORT -- curl -s  $K8_SERVICE
 ```
 
 
-<h3>demo using service NodePort </h3>
+<h2>demo using service NodePort </h2>
 
 
 edit the existing `service-demo.ymal` file, changing the type to `NodePort`
@@ -76,7 +76,7 @@ curl 127.0.0.1:<nodePort>
 go to youur browser and hit `<INTERNAL-IP>:<nodePort>`
 
 
-<h3>demo using service LoadBalancer </h3>
+<h2>demo using service LoadBalancer </h2>
 
 
 again edit the existing `service-demo.ymal` file, changing the type to `LoadBalancer`
@@ -93,7 +93,7 @@ k get svc k8-lab-demo-service
 
 go to youur browser and hit `127.0.0.1:<service port>`
 
-<h3>Cleanup the environment </h3>
+<h2>Cleanup the environment </h2>
 
 delete all resources
 
