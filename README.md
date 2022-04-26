@@ -90,3 +90,11 @@ k get svc k8-lab-demo-service
 ```
 
 go to youur browser and hit `127.0.0.1:<service port>`
+
+<h1> Cleanup the environment </h1>
+
+delete all resources
+
+```
+k delete -f .k8s/service-api/service-demo.yml
+```
