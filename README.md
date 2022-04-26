@@ -65,10 +65,10 @@ confirm type is now NodePort and grab the PORT(S) value
 k get svc k8-lab-demo-service
 ```
 
-grab the `INTERNAL-IP` field value
+go to youur browser and hit `localhost:<nodePort>`
 
 ```
-k get nodes -o wide
+curl 127.0.0.1:<nodePort>
 ```
 
 go to youur browser and hit `<INTERNAL-IP>:<nodePort>`
@@ -83,10 +83,10 @@ again edit the existing `service-demo.ymal` file, changing the type to `LoadBala
 kubectl edit svc k8-lab-demo-service
 ```
 
-confirm type is now LoadBalancer and grab the `EXTERNAL-IP` and `PORT(S)` values
+confirm type is now LoadBalancer and grab the `PORT(S)` values
 
 ```
 k get svc k8-lab-demo-service
 ```
 
-go to youur browser and hit `<EXTERNAL-IP>:<nodePort>`
+go to youur browser and hit `127.0.0.1:<service port>`

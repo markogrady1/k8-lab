@@ -1,5 +1,5 @@
 const http = require('http');
-const pino = require('pino')();
+const pino = require('pino')({ timestamp: () => `,"time":"${new Date(Date.now()).toISOString()}"`});
 
 const PORT = process.env.PORT || 3333;
 
