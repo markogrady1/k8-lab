@@ -10,7 +10,7 @@ docker build . -t k8-lab-image
 # demo using Service ClusterIP
 
 ```
-kubectl apply -f .k8s/service/service-as-clusterip.yml
+kubectl apply -f .k8s/service-api/service-demo.yml
 ```
 
 get the clucterIP
